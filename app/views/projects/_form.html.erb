@@ -1,0 +1,93 @@
+<%= form_for(@project) do |f| %>
+  <% if @project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+      <% @project.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %><br>
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :lider_tivit %><br>
+    <%= f.text_field :lider_tivit %>
+  </div>
+  <div class="field">
+    <%= f.label :empresa %><br>
+    <%= f.text_field :empresa %>
+  </div>
+  <div class="field">
+    <%= f.label :pep %><br>
+    <%= f.text_field :pep %>
+  </div>
+  <div class="field">
+    <%= f.label :lider_ict %><br>
+    <%= f.text_field :lider_ict %>
+  </div>
+  <div class="field">
+    <%= f.label :data_inicio %><br>
+    <%= f.date_select :data_inicio %>
+  </div>
+  <div class="field">
+    <%= f.label :data_pre %><br>
+    <%= f.date_select :data_pre %>
+  </div>
+  <div class="field">
+    <%= f.label :data_teste %><br>
+    <%= f.date_select :data_teste %>
+  </div>
+  <div class="field">
+    <%= f.label :data_homologacao %><br>
+    <%= f.date_select :data_homologacao %>
+  </div>
+  <div class="field">
+    <%= f.label :data_pro %><br>
+    <%= f.date_select :data_pro %>
+  </div>
+  <div class="field">
+    <%= f.label :horas_swf %><br>
+    <%= f.number_field :horas_swf %>
+  </div>
+  <div class="field">
+    <%= f.label :horas_sf %><br>
+    <%= f.number_field :horas_sf %>
+  </div>
+  <div class="field">
+    <%= f.label :total_horas %><br>
+    <%= f.number_field :total_horas %>
+  </div>
+  <div class="field">
+    <%= f.label :faturado_sf %><br>
+    <%= f.number_field :faturado_sf %>
+  </div>
+  <div class="field">
+    <%= f.label :faturado_swf %><br>
+    <%= f.number_field :faturado_swf %>
+  </div>
+  <div class="field">
+    <%= f.label :horas_consumidas %><br>
+    <%= f.number_field :horas_consumidas %>
+  </div>
+  <div class="field">
+    <%= f.label :avanco_fisico %><br>
+    <%= f.number_field :avanco_fisico %>
+  </div>
+  <div class="field">
+    <%= f.label :desvio %><br>
+    <%= f.number_field :desvio %>
+  </div>
+  <div class="field">
+    <%= f.label :processo %><br>
+    <%= f.check_box :processo %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome: MyString
+  lider_tivit: MyString
+  empresa: MyString
+  pep: MyString
+  lider_ict: MyString
+  data_inicio: 2015-01-22
+  data_pre: 2015-01-22
+  data_teste: 2015-01-22
+  data_homologacao: 2015-01-22
+  data_pro: 2015-01-22
+  horas_swf: 1
+  horas_sf: 1
+  total_horas: 1
+  faturado_sf: 1
+  faturado_swf: 1
+  horas_consumidas: 1
+  avanco_fisico: 1
+  desvio: 1
+  processo: false
+
+two:
+  nome: MyString
+  lider_tivit: MyString
+  empresa: MyString
+  pep: MyString
+  lider_ict: MyString
+  data_inicio: 2015-01-22
+  data_pre: 2015-01-22
+  data_teste: 2015-01-22
+  data_homologacao: 2015-01-22
+  data_pro: 2015-01-22
+  horas_swf: 1
+  horas_sf: 1
+  total_horas: 1
+  faturado_sf: 1
+  faturado_swf: 1
+  horas_consumidas: 1
+  avanco_fisico: 1
+  desvio: 1
+  processo: false
