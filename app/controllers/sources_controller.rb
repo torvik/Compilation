@@ -69,6 +69,6 @@ class SourcesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def source_params
-      params.require(:source).permit(:nome, :status,:product_ids => [])
+      params.require(:source).permit(:nome, :status,:product_ids => [], :request_ids => [])
     end
 end

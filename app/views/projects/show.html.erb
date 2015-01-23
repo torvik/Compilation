@@ -27,27 +27,27 @@
 
 <p>
   <strong>Data inicio:</strong>
-  <%= @project.data_inicio %>
+  <%= @project.data_inicio.strftime("%d/%m/%Y") %>
 </p>
 
 <p>
   <strong>Data pre:</strong>
-  <%= @project.data_pre %>
+  <%= @project.data_pre.strftime("%d/%m/%Y") %>
 </p>
 
 <p>
   <strong>Data teste:</strong>
-  <%= @project.data_teste %>
+  <%= @project.data_teste.strftime("%d/%m/%Y") %>
 </p>
 
 <p>
   <strong>Data homologacao:</strong>
-  <%= @project.data_homologacao %>
+  <%= @project.data_homologacao.strftime("%d/%m/%Y") %>
 </p>
 
 <p>
   <strong>Data pro:</strong>
-  <%= @project.data_pro %>
+  <%= @project.data_pro.strftime("%d/%m/%Y") %>
 </p>
 
 <p>
@@ -62,7 +62,8 @@
 
 <p>
   <strong>Total horas:</strong>
-  <%= @project.total_horas %>
+  <%= @project.horas_swf + @project.horas_sf  %>
+
 </p>
 
 <p>
@@ -82,7 +83,7 @@
 
 <p>
   <strong>Avanco fisico:</strong>
-  <%= @project.avanco_fisico %>
+  <%= number_to_percentage(@project.avanco_fisico, precision: 0) %>
 </p>
 
 <p>
@@ -92,7 +93,11 @@
 
 <p>
   <strong>Processo:</strong>
-  <%= @project.processo %>
+    <% if @project.processo == true %>
+          <%= 'Seguindo o processo ' %>
+        <% else %>
+         <%= 'Não está seguindo o processo' %>
+        <% end %>
 </p>
 
 <%= link_to 'Edit', edit_project_path(@project) %> |

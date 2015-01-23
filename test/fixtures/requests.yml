@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data_solicitacao: 2015-01-22
+  data_pre: 2015-01-22
+  data_pro: 2015-01-22
+  status: MyString
+  data_alteracao: 2015-01-22
+  recompilado: false
+  observation: MyText
+  environment: MyString
+  oficializar: false
+  data_oficializacao: 2015-01-22
+  project_id: 
+  source_id: 
+
+two:
+  data_solicitacao: 2015-01-22
+  data_pre: 2015-01-22
+  data_pro: 2015-01-22
+  status: MyString
+  data_alteracao: 2015-01-22
+  recompilado: false
+  observation: MyText
+  environment: MyString
+  oficializar: false
+  data_oficializacao: 2015-01-22
+  project_id: 
+  source_id: 

@@ -7,21 +7,13 @@
       <th>Lider tivit</th>
       <th>Empresa</th>
       <th>Pep</th>
-      <th>Lider ict</th>
       <th>Data inicio</th>
-      <th>Data pre</th>
-      <th>Data teste</th>
-      <th>Data homologacao</th>
       <th>Data pro</th>
-      <th>Horas swf</th>
-      <th>Horas sf</th>
       <th>Total horas</th>
       <th>Faturado sf</th>
       <th>Faturado swf</th>
       <th>Horas consumidas</th>
       <th>Avanco fisico</th>
-      <th>Desvio</th>
-      <th>Processo</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -33,21 +25,13 @@
         <td><%= project.lider_tivit %></td>
         <td><%= project.empresa %></td>
         <td><%= project.pep %></td>
-        <td><%= project.lider_ict %></td>
-        <td><%= project.data_inicio %></td>
-        <td><%= project.data_pre %></td>
-        <td><%= project.data_teste %></td>
-        <td><%= project.data_homologacao %></td>
-        <td><%= project.data_pro %></td>
-        <td><%= project.horas_swf %></td>
-        <td><%= project.horas_sf %></td>
-        <td><%= project.total_horas %></td>
+        <td><%= project.data_inicio.strftime("%d/%m/%Y") %></td>
+        <td><%= project.data_pro.strftime("%d/%m/%Y") %></td>
+        <td><%= project.horas_swf + project.horas_sf  %></td>
         <td><%= project.faturado_sf %></td>
         <td><%= project.faturado_swf %></td>
         <td><%= project.horas_consumidas %></td>
-        <td><%= project.avanco_fisico %></td>
-        <td><%= project.desvio %></td>
-        <td><%= project.processo %></td>
+        <td><%= number_to_percentage(project.avanco_fisico, precision: 0) %></td>
         <td><%= link_to 'Show', project %></td>
         <td><%= link_to 'Edit', edit_project_path(project) %></td>
         <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>

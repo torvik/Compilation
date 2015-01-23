@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150122232531) do
+ActiveRecord::Schema.define(version: 20150123002814) do
 
   create_table "products", force: true do |t|
     t.string   "nome"
@@ -42,7 +42,6 @@ ActiveRecord::Schema.define(version: 20150122232531) do
     t.date     "data_pro"
     t.integer  "horas_swf"
     t.integer  "horas_sf"
-    t.integer  "total_horas"
     t.integer  "faturado_sf"
     t.integer  "faturado_swf"
     t.integer  "horas_consumidas"
@@ -51,6 +50,31 @@ ActiveRecord::Schema.define(version: 20150122232531) do
     t.boolean  "processo"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "requests", force: true do |t|
+    t.date     "data_solicitacao"
+    t.date     "data_pre"
+    t.date     "data_pro"
+    t.string   "status"
+    t.date     "data_alteracao"
+    t.boolean  "recompilado"
+    t.text     "observation"
+    t.string   "environment"
+    t.boolean  "oficializar"
+    t.date     "data_oficializacao"
+    t.integer  "project_id"
+    t.integer  "source_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "requests", ["project_id"], name: "index_requests_on_project_id"
+  add_index "requests", ["source_id"], name: "index_requests_on_source_id"
+
+  create_table "requests_sources", id: false, force: true do |t|
+    t.integer "request_id", null: false
+    t.integer "source_id",  null: false
   end
 
   create_table "sources", force: true do |t|
