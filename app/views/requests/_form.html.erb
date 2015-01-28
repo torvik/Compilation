@@ -11,55 +11,57 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :data_solicitacao %><br>
-    <%= f.date_select :data_solicitacao %>
+ <div class="form-group">
+    <%= f.label :data_solicitacao %>
+    <%= f.date_select :data_solicitacao, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :data_pre %><br>
-    <%= f.date_select :data_pre %>
+<div class="form-group">
+    <%= f.label :data_pre %>
+    <%= f.date_select :data_pre , class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :data_pro %><br>
-    <%= f.date_select :data_pro %>
+<div class="form-group">
+    <%= f.label :data_pro %>
+    <%= f.date_select :data_pro , class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :status %><br>
-    <%= f.text_field :status %>
+<div class="form-group">
+    <%= f.label :status %>
+    <%= f.text_field :status , class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :data_alteracao %><br>
-    <%= f.date_select :data_alteracao %>
+  <div class="form-group">
+    <%= f.label :data_alteracao %>
+    <%= f.date_select :data_alteracao , class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :recompilado %><br>
+  <div class="form-group">
+    <%= f.label :recompilado %>
     <%= f.check_box :recompilado %>
   </div>
-  <div class="field">
-    <%= f.label :observation %><br>
-    <%= f.text_area :observation %>
+  <div class="form-group">
+    <%= f.label :observation %>
+    <%= f.text_area :observation, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :environment %><br>
-    <%= f.select :environment, options_for_select([["Escolha o Ambiente"],["DESENVOLVIMENTO"], ["PRE PRODUÇAO"], ["PRODUÇAO"]]) %>
+  <div class="form-group">
+    <%= f.label :environment %>
+    <%= f.select :environment, options_for_select([["Escolha o Ambiente"],["DESENVOLVIMENTO"], ["PRE PRODUÇAO"], ["PRODUÇAO"]]) , class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :oficializar %><br>
+  <div class="form-group">
+    <%= f.label :oficializar %>
     <%= f.check_box :oficializar %>
   </div>
-  <div class="field">
-    <%= f.label :data_oficializacao %><br>
-    <%= f.date_select :data_oficializacao %>
+  <div class="form-group">
+    <%= f.label :data_oficializacao %>
+    <%= f.date_select :data_oficializacao , class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :project_id %><br>
+  <div class="form-group">
+    <%= f.label :project_id %>
     <%= f.collection_select(:project_id, Project.all, :id, :nome) %>
   </div>
-  <div class="field">
+
+
+  <div class="form-group">
     <%= f.label :source_id %><br>
     <%= collection_check_boxes(:request, :source_ids, @sources, :id, :nome) %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-primary"%>
   </div>
 <% end %>

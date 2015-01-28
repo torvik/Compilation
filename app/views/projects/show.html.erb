@@ -1,12 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nome:</strong>
-  <%= @project.nome %>
-</p>
+<h2><%= @project.nome %></h2>
+
+<hr>
+
+<div class="row">
+  <div class="col-xs-6 col-sm-3">
 
 <p>
-  <strong>Lider tivit:</strong>
+  <strong>Lider Tivit:</strong>
   <%= @project.lider_tivit %>
 </p>
 
@@ -21,68 +23,79 @@
 </p>
 
 <p>
-  <strong>Lider ict:</strong>
+  <strong>Lider ICT:</strong>
   <%= @project.lider_ict %>
 </p>
-
+  </div>
+  <div class="col-xs-6 col-sm-3">
 <p>
-  <strong>Data inicio:</strong>
-  <%= @project.data_inicio.strftime("%d/%m/%Y") %>
-</p>
-
-<p>
-  <strong>Data pre:</strong>
-  <%= @project.data_pre.strftime("%d/%m/%Y") %>
-</p>
-
-<p>
-  <strong>Data teste:</strong>
-  <%= @project.data_teste.strftime("%d/%m/%Y") %>
-</p>
-
-<p>
-  <strong>Data homologacao:</strong>
-  <%= @project.data_homologacao.strftime("%d/%m/%Y") %>
-</p>
-
-<p>
-  <strong>Data pro:</strong>
-  <%= @project.data_pro.strftime("%d/%m/%Y") %>
-</p>
-
-<p>
-  <strong>Horas swf:</strong>
+  <strong>Horas SWF:</strong>
   <%= @project.horas_swf %>
 </p>
 
 <p>
-  <strong>Horas sf:</strong>
+  <strong>Horas SF:</strong>
   <%= @project.horas_sf %>
 </p>
 
 <p>
-  <strong>Total horas:</strong>
+  <strong>Total Horas do Projeto:</strong>
   <%= @project.horas_swf + @project.horas_sf  %>
 
 </p>
 
 <p>
-  <strong>Faturado sf:</strong>
+  <strong>Faturado SF:</strong>
   <%= @project.faturado_sf %>
 </p>
 
 <p>
-  <strong>Faturado swf:</strong>
+  <strong>Faturado SWF:</strong>
   <%= @project.faturado_swf %>
 </p>
 
 <p>
-  <strong>Horas consumidas:</strong>
+  <strong>Horas Consumidas:</strong>
   <%= @project.horas_consumidas %>
 </p>
 
+
+
+  </div>
+
+  <!-- Add the extra clearfix for only the required viewport -->
+  <div class="clearfix visible-xs-block"></div>
+
+  <div class="col-xs-6 col-sm-3">
 <p>
-  <strong>Avanco fisico:</strong>
+  <strong>Data Início:</strong>
+  <%= @project.data_inicio.strftime("%d/%m/%Y") %>
+</p>
+
+<p>
+  <strong>Data entrada em PRÉ:</strong>
+  <%= @project.data_pre.strftime("%d/%m/%Y") %>
+</p>
+
+<p>
+  <strong>Data Testes de Produto:</strong>
+  <%= @project.data_teste.strftime("%d/%m/%Y") %>
+</p>
+
+<p>
+  <strong>Data Homologação:</strong>
+  <%= @project.data_homologacao.strftime("%d/%m/%Y") %>
+</p>
+
+<p>
+  <strong>Data entrada em Produção:</strong>
+  <%= @project.data_pro.strftime("%d/%m/%Y") %>
+</p>
+
+  </div>
+  <div class="col-xs-6 col-sm-3">
+    <p>
+  <strong>Avanco Físico:</strong>
   <%= number_to_percentage(@project.avanco_fisico, precision: 0) %>
 </p>
 
@@ -92,13 +105,25 @@
 </p>
 
 <p>
-  <strong>Processo:</strong>
+  <strong>Seguindo o Processo:</strong>
     <% if @project.processo == true %>
-          <%= 'Seguindo o processo ' %>
+          <%= 'Sim ' %>
         <% else %>
          <%= 'Não está seguindo o processo' %>
         <% end %>
 </p>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
