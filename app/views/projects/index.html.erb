@@ -9,8 +9,7 @@
       <th>Data inicio</th>
       <th>Data pro</th>
       <th>Total horas</th>
-      <th>Faturado sf</th>
-      <th>Faturado swf</th>
+      <th>Total Faturado </th>
       <th>Horas consumidas</th>
       <th>Avanco fisico</th>
       <th colspan="3"></th>
@@ -26,8 +25,7 @@
         <td><%= project.data_inicio.strftime("%d/%m/%Y") %></td>
         <td><%= project.data_pro.strftime("%d/%m/%Y") %></td>
         <td><%= project.horas_swf + project.horas_sf  %></td>
-        <td><%= project.faturado_sf %></td>
-        <td><%= project.faturado_swf %></td>
+        <td><%= project.faturado_sf + project.faturado_swf  %></td>
         <td><%= project.horas_consumidas %></td>
         <td><%= number_to_percentage(project.avanco_fisico, precision: 0) %></td>
         <td><%= link_to 'Show', project, class: "btn btn-primary btn-sm" %></td>
