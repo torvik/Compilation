@@ -11,80 +11,80 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :nome %><br>
-    <%= f.text_field :nome %>
+    <%= f.text_field :nome, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :lider_tivit %><br>
-    <%= f.text_field :lider_tivit %>
+    <%= f.text_field :lider_tivit, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :empresa %><br>
-    <%= f.text_field :empresa %>
+    <%= f.text_field :empresa, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :pep %><br>
-    <%= f.text_field :pep %>
+    <%= f.text_field :pep, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :lider_ict %><br>
-    <%= f.text_field :lider_ict %>
+    <%= f.text_field :lider_ict , class: "form-control"%>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :data_inicio %><br>
-    <%= f.date_select :data_inicio %>
+    <%= f.date_select :data_inicio, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :data_pre %><br>
-    <%= f.date_select :data_pre %>
+    <%= f.date_select :data_pre, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :data_teste %><br>
-    <%= f.date_select :data_teste %>
+    <%= f.date_select :data_teste, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :data_homologacao %><br>
-    <%= f.date_select :data_homologacao %>
+    <%= f.date_select :data_homologacao, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :data_pro %><br>
-    <%= f.date_select :data_pro %>
+    <%= f.date_select :data_pro, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :horas_swf %><br>
-    <%= f.number_field :horas_swf %>
+    <%= f.number_field :horas_swf, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :horas_sf %><br>
-    <%= f.number_field :horas_sf %>
+    <%= f.number_field :horas_sf, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :faturado_sf %><br>
-    <%= f.number_field :faturado_sf %>
+    <%= f.number_field :faturado_sf , class: "form-control"%>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :faturado_swf %><br>
-    <%= f.number_field :faturado_swf %>
+    <%= f.number_field :faturado_swf , class: "form-control"%>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :horas_consumidas %><br>
-    <%= f.number_field :horas_consumidas %>
+    <%= f.number_field :horas_consumidas , class: "form-control"%>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :avanco_fisico %><br>
-    <%= f.number_field :avanco_fisico %>
+    <%= f.number_field :avanco_fisico, class: "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :desvio %><br>
-    <%= f.number_field :desvio %>
+    <%= f.number_field :desvio , class: "form-control"%>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :processo %><br>
-    <%= f.check_box :processo %>
+    <%= f.check_box :processo, class: "form-control" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>

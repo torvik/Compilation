@@ -11,20 +11,20 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :nome %><br>
-    <%= f.text_field :nome %>
+    <%= f.text_field :nome , class: "form-control"%>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :status %><br>
-    <%= f.text_field :status %>
+    <%= f.text_field :status , class: "form-control"%>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :Tecnologia %><br>
     <%= f.select :technology, options_for_select([["Escolha a Tecnologia"],["VB"], ["C"], ["DotNet"]]) %>
 
   </div>
-  <div class="field">
+  <div class="form-group">
     <label class="checkbox-inline">
     <%= collection_check_boxes(:product, :source_ids, @sources, :id, :nome) %>
     </label>

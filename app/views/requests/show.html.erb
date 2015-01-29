@@ -1,8 +1,36 @@
 <p id="notice"><%= notice %></p>
 
+<h2><%= @request.project.nome %></h2>
+
+<p class="pull-right">
+  <strong>Status:</strong >
+  <%= @request.status %>
+</p>
+
+<br>
+<hr>
+
+<div class="row">
+  <div class="col-xs-6 col-sm-3">
+
+
 <p>
-  <strong>Data solicitacao:</strong>
-  <%= @request.data_solicitacao.strftime("%d/%m/%Y")  %>
+  <strong>Source:</strong>
+  <%= @request.sources.map { |c| c.nome}.join(' | ') %>
+</p>
+
+<p>
+  <strong>Environment:</strong>
+  <%= @request.environment %>
+</p>
+
+
+   </div>
+  <div class="col-xs-6 col-sm-3">
+
+
+<p><strong>Data solicitacao:</strong>
+<%= @request.data_solicitacao.strftime("%d/%m/%Y")  %>
 </p>
 
 <p>
@@ -16,14 +44,13 @@
 </p>
 
 <p>
-  <strong>Status:</strong>
-  <%= @request.status %>
-</p>
 
-<p>
-  <strong>Data alteracao:</strong>
-  <%= @request.data_alteracao.strftime("%d/%m/%Y")  %>
-</p>
+   </div>
+
+  <!-- Add the extra clearfix for only the required viewport -->
+  <div class="clearfix visible-xs-block"></div>
+
+  <div class="col-xs-6 col-sm-3">
 
 <p>
   <strong>Recompilado:</strong>
@@ -35,17 +62,11 @@
         <% end %>
 </p>
 
-<p>
-  <strong>Observation:</strong>
-  <%= @request.observation %>
-</p>
+  <p>
+  <strong>Data alteracao:</strong>
+  <%= @request.data_alteracao.strftime("%d/%m/%Y")  %>
 
-<p>
-  <strong>Environment:</strong>
-  <%= @request.environment %>
-</p>
-
-<p>
+  <p>
   <strong>Oficializado:</strong>
     <% if @request.oficializar  == true %>
           <%= 'Sim em ' + @request.data_oficializacao.strftime("%d/%m/%Y")  %>
@@ -55,15 +76,32 @@
 </p>
 
 
-<p>
-  <strong>Project:</strong>
-  <%= @request.project.nome %>
+
 </p>
 
+   </div>
+  <div class="col-xs-6 col-sm-3">
+
+
+
 <p>
-  <strong>Source:</strong>
-  <%= @request.sources.map { |c| c.nome}.join(' | ') %>
+  <strong>Observation:</strong>
+  <%= @request.observation %>
 </p>
+
+
+
+
+
+
+
+
+   </div>
+</div>
+
+
+
+
 
 <%= link_to 'Edit', edit_request_path(@request) %> |
 <%= link_to 'Back', requests_path %>

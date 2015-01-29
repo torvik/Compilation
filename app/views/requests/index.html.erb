@@ -1,17 +1,15 @@
 <h1>Listing requests</h1>
 
-<table class="table table-striped table-hover">
+<table class="table table-hover">
   <thead>
     <tr>
+      <th>Project</th>
       <th>Data solicitacao</th>
+      <th>Source</th>
       <th>Status</th>
-      <th>Data alteracao</th>
-      <th>Recompilado</th>
-      <th>Observation</th>
       <th>Environment</th>
       <th>Oficializado</th>
-      <th>Project</th>
-      <th>Source</th>
+      <th>Recompilado</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,26 +17,24 @@
   <tbody>
     <% @requests.each do |request| %>
       <tr>
+       <td><%= request.project.nome %></td>
         <td><%= request.data_solicitacao.strftime("%d/%m/%Y") %></td>
+        <td><%= request.sources.map { |c| c.nome}.join(' | ') %> </td>
         <td><%= request.status %></td>
-        <td><%= request.data_alteracao %></td>
-        <% if request.recompilado == true %>
-          <td><%= 'Sim' %></td>
-        <% else %>
-          <td><%= 'Não' %></td>
-        <% end %>
-        <td><%= request.observation %></td>
         <td><%= request.environment %></td>
         <% if request.oficializar == true %>
           <td><%= 'Sim em ' + request.data_oficializacao.strftime("%d/%m/%Y") %></td>
         <% else %>
           <td><%= 'Não' %></td>
         <% end %>
-        <td><%= request.project.nome %></td>
-        <td><%= request.sources.map { |c| c.nome}.join(' | ') %> </td>
-        <td><%= link_to 'Show', request %></td>
-        <td><%= link_to 'Edit', edit_request_path(request) %></td>
-        <td><%= link_to 'Destroy', request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if request.recompilado == true %>
+          <td><%= 'Sim' %></td>
+        <% else %>
+          <td><%= 'Não' %></td>
+        <% end %>
+        <td><%= link_to 'Show', request, class: "btn btn-primary btn-sm" %></td>
+        <td><%= link_to 'Edit', edit_request_path(request), class: "btn btn-primary btn-sm" %></td>
+        <td><%= link_to 'Destroy', request, method: :delete, data: { confirm: 'Are you sure?' } , class: "btn btn-primary btn-sm"%></td>
       </tr>
     <% end %>
   </tbody>
