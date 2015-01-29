@@ -3,9 +3,12 @@
 <h2><%= @request.project.nome %></h2>
 
 <p class="pull-right">
+<strong>Criado por:</strong >
+<%= @request.user.nome %>
   <strong>Status:</strong >
   <%= @request.status %>
 </p>
+
 
 <br>
 <hr>

@@ -15,7 +15,7 @@ class RequestsController < ApplicationController
   # GET /requests/new
   def new
     @request = Request.new
-     @sources = Source.all
+    @sources = Source.all
   end
 
   # GET /requests/1/edit
@@ -29,6 +29,7 @@ class RequestsController < ApplicationController
     @request = Request.new(request_params)
     @sources = Source.where(:id => params[:sources_product])
     @request.sources << @sources
+    @request.user_id = current_user.id
 
     respond_to do |format|
       if @request.save

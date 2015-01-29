@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150127232948) do
+ActiveRecord::Schema.define(version: 20150129233929) do
 
   create_table "products", force: true do |t|
     t.string   "nome"
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20150127232948) do
     t.integer  "source_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   add_index "requests", ["project_id"], name: "index_requests_on_project_id"
@@ -97,6 +98,7 @@ ActiveRecord::Schema.define(version: 20150127232948) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "nome"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
