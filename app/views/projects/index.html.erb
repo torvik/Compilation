@@ -3,6 +3,7 @@
 <table class="table table-hover">
   <thead>
     <tr>
+      <th>Criado Por:</th>
       <th>Nome</th>
       <th>Lider Tivit</th>
       <th>Pep</th>
@@ -19,6 +20,7 @@
   <tbody>
     <% @projects.each do |project| %>
       <tr>
+        <td><%= project.user.nome %></td>
         <td><%= project.nome %></td>
         <td><%= project.lider_tivit %></td>
         <td><%= project.pep %></td>
@@ -29,8 +31,10 @@
         <td><%= project.horas_consumidas %></td>
         <td><%= number_to_percentage(project.avanco_fisico, precision: 0) %></td>
         <td><%= link_to 'Show', project, class: "btn btn-primary btn-sm" %></td>
+        <% if (user_signed_in?) && (current_user == project.user) %>
         <td><%= link_to 'Edit', edit_project_path(project) , class: "btn btn-primary btn-sm" %></td>
         <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary btn-sm"  %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -38,4 +42,6 @@
 
 <br>
 
+<% if user_signed_in?  && current_user.admin? %>
 <%= link_to 'New Project', new_project_path %>
+<% end %>

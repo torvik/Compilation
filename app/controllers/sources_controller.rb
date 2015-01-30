@@ -1,6 +1,7 @@
 class SourcesController < ApplicationController
   before_action :set_source, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:new,:edit, :create, :update, :destroy]
+  before_action :admin_user,     only: [:destroy, :create, :new]
   # GET /sources
   # GET /sources.json
   def index
@@ -70,5 +71,10 @@ class SourcesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def source_params
       params.require(:source).permit(:nome, :status,:product_ids => [], :request_ids => [])
+    end
+
+    # Confirms an admin user.
+    def admin_user
+      redirect_to(root_url) unless current_user.admin?
     end
 end

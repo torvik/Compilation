@@ -1,6 +1,7 @@
 class RequestsController < ApplicationController
   before_action :set_request, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:new,:edit, :create, :update, :destroy]
+  before_filter :check_user , only: [:edit, :update, :destroy]
   # GET /requests
   # GET /requests.json
   def index
@@ -82,4 +83,11 @@ class RequestsController < ApplicationController
     def request_params
       params.require(:request).permit(:data_solicitacao, :data_pre, :data_pro, :status, :data_alteracao, :recompilado, :observation, :environment, :oficializar, :data_oficializacao, :project_id, :source_ids => [])
     end
+
+    def check_user
+        if current_user != @request.user
+          redirect_to root_url, alert: "Sorry..."
+        end
+    end
+
 end

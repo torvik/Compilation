@@ -35,8 +35,10 @@
           <td><%= 'Não' %></td>
         <% end %>
         <td><%= link_to 'Show', request, class: "btn btn-primary btn-sm" %></td>
-        <td><%= link_to 'Edit', edit_request_path(request), class: "btn btn-primary btn-sm" %></td>
-        <td><%= link_to 'Destroy', request, method: :delete, data: { confirm: 'Are you sure?' } , class: "btn btn-primary btn-sm"%></td>
+        <% if (user_signed_in?) && (current_user == request.user) %>
+          <td><%= link_to 'Edit', edit_request_path(request), class: "btn btn-primary btn-sm" %></td>
+          <td><%= link_to 'Destroy', request, method: :delete, data: { confirm: 'Are you sure?' } , class: "btn btn-primary btn-sm"%></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -44,4 +46,6 @@
 
 <br>
 
+<% if user_signed_in? %>
 <%= link_to 'New Request', new_request_path %>
+<% end %>

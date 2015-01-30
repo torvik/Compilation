@@ -23,5 +23,6 @@
 </table>
 
 <br>
-
+<% if user_signed_in? && current_user.admin? %>
 <%= link_to 'New Source', new_source_path %>
+<% end %>

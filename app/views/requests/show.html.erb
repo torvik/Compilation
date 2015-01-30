@@ -1,12 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h2><%= @request.project.nome %></h2>
+<h2><%= @request.project.nome %> </h2>
+
+<strong>Status:</strong >
+  <%= @request.status %>
 
 <p class="pull-right">
-<strong>Criado por:</strong >
+<strong>Solicitação criada por:</strong >
 <%= @request.user.nome %>
-  <strong>Status:</strong >
-  <%= @request.status %>
+
 </p>
 
 

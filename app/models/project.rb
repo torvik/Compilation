@@ -6,4 +6,6 @@ class Project < ActiveRecord::Base
   validates  :faturado_sf, presence: true
   validates  :faturado_swf, presence: true
 
+  belongs_to :user
+
 end

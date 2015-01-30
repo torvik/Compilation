@@ -151,78 +151,10 @@
  * ----------------------------------------------------------------------------
  */
 
-#footer-links.widget-area {
-  float: left;
-  /*width: 66%;*/
-  width: 500px;
-}
-#social-links.widget-area {
-  float: right;
-  /*width: 33%;*/
-  /*width: 323px;*/
-}
-
-/* footer search */
-
-#footer-search.widget-area {
-  float: right;
-  margin-top: 195px;
-}
-
-#footer-search.widget-area .widget.widget_search {
-  padding: 0;
-}
-
-#footer-search.widget-area h3.widget-title {
-  padding: 0 0  3px 0;
-}
-
-#footer-search.widget-area .search-submit {
-  display: inline-block;
-}
-
-#footer-search.widget-area input[type="search"] {
-  width: 190px !important;
-  padding: 8px !important;
-}
-
-#footer-search.widget-area button, input[type="submit"],
-#footer-search.widget-area input[type="button"],
-#footer-search.widget-area input[type="reset"],
-#footer-search.widget-area button, input[type="submit"]:active,
-#footer-search.widget-area input[type="button"]:active,
-#footer-search.widget-area input[type="reset"]:active {
-  border: none;
-  border-radius: 2px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  color: #fff;
-  background: #777 !important;
-  display: inline-block;
-  padding: 13px 12px 12px 12px;
-  text-decoration: none;
-  font-family: "Verb", Helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 13px;
-  font-weight: 300;
-  letter-spacing: 0;
-  /* box-shadow: 0 3px 0 rgba(0,0,0,0.1); */
-  -webkit-transition: all 0.1s ease-in-out;
-  -moz-transition: all 0.1s ease-in-out;
-  -o-transition: all 0.1s ease-in-out;
-  -ms-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out;
-  margin: 0 0 0 -8px;
-}
-
-#footer-search.widget-area button, input[type="submit"]:hover,
-#footer-search.widget-area input[type="button"]:hover,
-#footer-search.widget-area input[type="reset"]:hover {
-  background: #666 !important;
-}
 
 .site-footer {
   background-color: #2c3439;
+  margin-bottom: -1px;
 }
 
 .site-footer .widget-area,
@@ -326,6 +258,7 @@ x
 
 .site-info {
   background: #242a2d;
+
 }
 
 .site-info #copyright-links {
