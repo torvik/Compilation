@@ -1,0 +1,46 @@
+<h1>Sua solicitação sofreu atualização </h1>
+
+<h2> <strong>Status:</strong><%= @request_m.status %></h2>
+
+<p> <strong>Solicitação criada por:</strong><%= @request_m.user.nome %></p>
+
+<p>
+  <strong>Projeto relacionado:</strong><%= @request_m.project.nome %>
+</p>
+
+<p>
+ <strong>Líder do Projeto</strong> <%= @request_m.project.lider_tivit %>
+ <strong>E-mail do líder </strong> <%= @request_m.project.user.email %>
+</p>
+
+
+<p>
+  <strong>Fontes a serem compilados:</strong>
+  <%= @request_m.sources.map { |c| c.nome}.join(' | ') %>
+</p>
+
+
+<p>
+ <strong>Ambiente de destino:</strong> <%= @request_m.environment %>
+</p>
+
+<p>
+ <strong>Data da Solicitação:</strong> <%= @request_m.data_solicitacao.strftime("%d/%m/%Y") %>
+</p>
+<p>
+ <strong>Data de PRE:</strong> <%= @request_m.data_pre.strftime("%d/%m/%Y") %>
+</p>
+
+<p>
+ <strong>Data de PRO:</strong> <%= @request_m.data_pro.strftime("%d/%m/%Y") %>
+</p>
+
+<p>
+ <strong>Observação:</strong> <%= @request_m.observation %>
+</p>
+
+
+
+<p>Obrigado!</p>
+
+<em>Compilation Team</em>

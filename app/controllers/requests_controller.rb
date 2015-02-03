@@ -34,6 +34,9 @@ class RequestsController < ApplicationController
 
     respond_to do |format|
       if @request.save
+        RequestMailer.request_teste(@request).deliver
+        RequestMailer.thanks(@request).deliver
+
         format.html { redirect_to @request, notice: 'Request was successfully created.' }
         format.json { render :show, status: :created, location: @request }
       else
@@ -54,6 +57,8 @@ class RequestsController < ApplicationController
     respond_to do |format|
 
       if @request.update(request_params)
+        RequestMailer.alter_request(@request).deliver
+
         format.html { redirect_to @request, notice: 'Request was successfully updated.' }
         format.json { render :show, status: :ok, location: @request }
       else
