@@ -1,7 +1,7 @@
 class SourcesController < ApplicationController
   before_action :set_source, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new,:edit, :create, :update, :destroy]
-  before_action :admin_user,     only: [:destroy, :create, :new]
+  before_action :admin_user,    only: [:destroy, :create, :new, :edit, :update]
   # GET /sources
   # GET /sources.json
   def index
