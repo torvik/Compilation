@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   get 'home/index'
   get 'home/about'
+  get 'home/projectv'
+  get 'home/requestv'
+  get 'home/sourcev'
 
 
   devise_for :users
