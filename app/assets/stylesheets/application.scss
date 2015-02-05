@@ -124,13 +124,16 @@
   background-repeat: no-repeat;
 }
 .fade-carousel .slides .slide-1 {
-  background-image: url("https://s3.amazonaws.com/herokuvp/01.jpeg");
+  //background-image: url("https://s3.amazonaws.com/herokuvp/01.jpeg");
+  background-image: asset-data-url("01.jpeg")
 }
 .fade-carousel .slides .slide-2 {
-  background-image: url("https://s3.amazonaws.com/herokuvp/02.jpeg");
+  //background-image: url("https://s3.amazonaws.com/herokuvp/02.jpeg");
+  background-image: asset-data-url("02.jpeg")
 }
 .fade-carousel .slides .slide-3 {
-  background-image: url("https://s3.amazonaws.com/herokuvp/03.jpeg");
+  //background-image: url("https://s3.amazonaws.com/herokuvp/03.jpeg");
+  background-image: asset-data-url("03.jpeg")
 }
 
 /********************************/
